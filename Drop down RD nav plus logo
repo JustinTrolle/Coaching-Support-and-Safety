@@ -1,0 +1,183 @@
+<!-- Race Director Support Materials - Accordion Section -->
+<section style="padding: 40px 20px; margin: 40px 0;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    
+    <!-- Accordion Header/Banner -->
+    <div id="raceDirectorAccordion" onclick="toggleRaceDirectorAccordion()" style="background: linear-gradient(135deg, #002868 0%, #0066B3 100%); padding: 30px 40px; border-radius: 12px; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all 0.3s ease; position: relative; overflow: hidden;">
+      
+      <!-- Decorative Background Pattern -->
+      <div style="position: absolute; right: -50px; top: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.05); border-radius: 50%;"></div>
+      <div style="position: absolute; right: 100px; bottom: -30px; width: 150px; height: 150px; background: rgba(255,255,255,0.03); border-radius: 50%;"></div>
+      
+      <div style="display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 2; gap: 30px;">
+        
+        <!-- Logo on Left -->
+        <div style="flex-shrink: 0;">
+          <img src="https://raw.githubusercontent.com/JustinTrolle/USAT-Images/52c71743566619c0f52cc1b80849691cba7c9f20/USA_Triathlon_Education_Logo_Transparent.png" alt="Race Director Logo" style="height: 80px; width: auto; display: block;">
+        </div>
+        
+        <!-- Text Content in Center -->
+        <div style="flex: 1;">
+          <h2 style="font-size: 2.2em; color: white; margin: 0 0 10px 0; font-weight: 700;">
+            Race Director Support Materials
+          </h2>
+          <p style="font-size: 1.1em; color: rgba(255,255,255,0.9); margin: 0; line-height: 1.5;">
+            Access essential resources for planning, executing, and delivering exceptional triathlon events
+          </p>
+        </div>
+        
+        <!-- Toggle Icon on Right -->
+        <div id="rdAccordionToggleIcon" style="transition: transform 0.3s ease; flex-shrink: 0;">
+          <svg style="width: 40px; height: 40px; fill: white;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accordion Content (Initially Hidden) -->
+    <div id="raceDirectorContent" style="display: none; opacity: 0; transition: opacity 0.3s ease;">
+      <div style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding: 50px 40px 40px 40px; border-radius: 0 0 12px 12px; margin-top: -12px;">
+        
+        <!-- Resource Cards Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+          
+          <!-- Race Management Materials Card - Navy Blue -->
+          <div class="resource-card" style="background: white; border-radius: 12px; padding: 40px 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s ease; border-top: 4px solid #002868; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 20px; right: 20px; width: 60px; height: 60px; background: rgba(0,40,104,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+              <svg style="width: 30px; height: 30px; fill: #002868;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M19,19H5V8H19M16,1V3H8V1H6V3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3H18V1M17,12H12V17H17V12Z"/>
+              </svg>
+            </div>
+            <h3 style="color: #002868; font-size: 1.8em; margin-bottom: 15px; font-weight: 600;">
+              Race Management
+            </h3>
+            <p style="color: #666; line-height: 1.7; margin-bottom: 25px; font-size: 1.05em;">
+              Comprehensive event planning guides, operational checklists, volunteer management tools, timing systems, and race day logistics templates for seamless execution.
+            </p>
+            <a href="/pages/race-management-materials" style="display: inline-block; background: #002868; color: white; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,40,104,0.3);">
+              Access Resources →
+            </a>
+          </div>
+
+          <!-- Safety & Risk Management Card - USA Red -->
+          <div class="resource-card" style="background: white; border-radius: 12px; padding: 40px 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s ease; border-top: 4px solid #BF0D3E; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 20px; right: 20px; width: 60px; height: 60px; background: rgba(191,13,62,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+              <svg style="width: 30px; height: 30px; fill: #BF0D3E;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.1,7 14,7.9 14,9C14,10.1 13.1,11 12,11C10.9,11 10,10.1 10,9C10,7.9 10.9,7 12,7M18,17H6V16C6,14 10,12.9 12,12.9C14,12.9 18,14 18,16V17Z"/>
+              </svg>
+            </div>
+            <h3 style="color: #BF0D3E; font-size: 1.8em; margin-bottom: 15px; font-weight: 600;">
+              Safety & Risk Management
+            </h3>
+            <p style="color: #666; line-height: 1.7; margin-bottom: 25px; font-size: 1.05em;">
+              Emergency action plans, medical protocols, water safety requirements, insurance guidelines, liability waivers, and risk mitigation strategies for safe events.
+            </p>
+            <a href="/pages/race-safety-materials" style="display: inline-block; background: #BF0D3E; color: white; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(191,13,62,0.3);">
+              View Safety Info →
+            </a>
+          </div>
+
+          <!-- Technical Standards Card - Lighter Blue -->
+          <div class="resource-card" style="background: white; border-radius: 12px; padding: 40px 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: all 0.3s ease; border-top: 4px solid #0066B3; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 20px; right: 20px; width: 60px; height: 60px; background: rgba(0,102,179,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+              <svg style="width: 30px; height: 30px; fill: #0066B3;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/>
+              </svg>
+            </div>
+            <h3 style="color: #0066B3; font-size: 1.8em; margin-bottom: 15px; font-weight: 600;">
+              Technical Standards
+            </h3>
+            <p style="color: #666; line-height: 1.7; margin-bottom: 25px; font-size: 1.05em;">
+              USA Triathlon sanctioning requirements, competition rules, course design standards, official resources, certification guidelines, and technical rulebook updates.
+            </p>
+            <a href="/pages/race-technical-standards" style="display: inline-block; background: #0066B3; color: white; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,102,179,0.3);">
+              Explore Standards →
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Footer Note -->
+        <div style="text-align: center; padding-top: 30px;">
+          <p style="color: #555; font-size: 0.95em; font-style: italic; margin: 0;">
+            All resources are designed to support professional race operations and ensure safe, fair competition for all participants.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- JavaScript for Accordion Functionality -->
+<script>
+function toggleRaceDirectorAccordion() {
+  const content = document.getElementById('raceDirectorContent');
+  const icon = document.getElementById('rdAccordionToggleIcon');
+  const accordion = document.getElementById('raceDirectorAccordion');
+  
+  if (content.style.display === 'none' || content.style.display === '') {
+    // Open accordion
+    content.style.display = 'block';
+    setTimeout(function() {
+      content.style.opacity = '1';
+    }, 10);
+    icon.style.transform = 'rotate(180deg)';
+    accordion.style.borderRadius = '12px 12px 0 0';
+  } else {
+    // Close accordion
+    content.style.opacity = '0';
+    setTimeout(function() {
+      content.style.display = 'none';
+    }, 300);
+    icon.style.transform = 'rotate(0deg)';
+    accordion.style.borderRadius = '12px';
+  }
+}
+</script>
+
+<!-- Add CSS for hover effects -->
+<style>
+#raceDirectorAccordion:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25) !important;
+  transform: translateY(-2px);
+}
+
+.resource-card {
+  cursor: pointer;
+}
+
+.resource-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25) !important;
+}
+
+.resource-card a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
+}
+
+@media (max-width: 768px) {
+  .resource-card {
+    margin-bottom: 20px;
+  }
+  
+  #raceDirectorAccordion {
+    padding: 20px 25px !important;
+  }
+  
+  #raceDirectorAccordion h2 {
+    font-size: 1.6em !important;
+  }
+  
+  #raceDirectorAccordion p {
+    font-size: 0.95em !important;
+  }
+  
+  #raceDirectorAccordion img {
+    height: 50px !important;
+  }
+}
+</style>
