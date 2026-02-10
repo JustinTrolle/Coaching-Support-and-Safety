@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swimming Safety and Education Banner</title>
+    <title>Swimming Education and Safety Banner</title>
     <style>
         /* CSS Variables - USA Triathlon Brand Colors */
         :root {
@@ -42,11 +42,12 @@
             margin: 0 auto;
             display: flex;
             align-items: center;
+            justify-content: space-between;
             padding: 30px 40px;
             gap: 30px;
         }
 
-        /* Logo Section */
+        /* Logo Sections */
         .banner-logo {
             flex-shrink: 0;
         }
@@ -57,6 +58,94 @@
             display: block;
         }
 
-        /* Text Section */
+        /* Text Section - Centered */
         .banner-text {
-            flex-grow: 1
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .banner-text h1 {
+            color: var(--white);
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+
+        /* Decorative Accent Line */
+        .accent-line {
+            width: 80px;
+            height: 4px;
+            background-color: var(--usa-red);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Responsive Design - Tablets */
+        @media (max-width: 768px) {
+            .banner-content {
+                padding: 25px 30px;
+                gap: 20px;
+            }
+
+            .banner-logo img {
+                width: 90px;
+            }
+
+            .banner-text h1 {
+                font-size: 1.75rem;
+            }
+
+            .accent-line {
+                width: 60px;
+            }
+        }
+
+        /* Responsive Design - Mobile */
+        @media (max-width: 480px) {
+            .banner-content {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+                gap: 15px;
+            }
+
+            .banner-logo img {
+                width: 80px;
+            }
+
+            .banner-text h1 {
+                font-size: 1.5rem;
+            }
+
+            .accent-line {
+                width: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Swimming Education and Safety Banner -->
+    <div class="banner-container">
+        <div class="banner-content">
+            <!-- Swimming Logo Baby Blue - Left Side -->
+            <div class="banner-logo">
+                <img src="https://raw.githubusercontent.com/JustinTrolle/Coaching-Support-and-Safety/2bb6086c6fd3de89a39964ee8ae51216e7d8f86f/Swimming_logo_uniform_blue.png" 
+                     alt="Swimming Logo">
+            </div>
+            
+            <!-- Banner Text - Center -->
+            <div class="banner-text">
+                <h1>Swimming Education and Safety</h1>
+                <div class="accent-line"></div>
+            </div>
+
+            <!-- Safety Logo - Right Side -->
+            <div class="banner-logo">
+                <img src="https://raw.githubusercontent.com/JustinTrolle/Coaching-Support-and-Safety/7e16ec2502aed64897d154843ed23653a0db3c67/Safety_Logo_transparent.png" 
+                     alt="Safety Logo">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
