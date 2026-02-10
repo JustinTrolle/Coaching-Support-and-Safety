@@ -271,9 +271,9 @@
         <!-- Section B: Video Title with Logos - Clickable Accordion (Stays at Top) -->
         <div class="section-b" onclick="toggleContent()">
             <div class="logos-container">
-                <!-- Swimming Logo (Far Left) -->
+                <!-- Swimming Logo (Far Left) - Updated URL -->
                 <div class="logo-container">
-                    <img src="https://raw.githubusercontent.com/JustinTrolle/Coaching-Support-and-Safety/633b585a37f1a56e726f76c775f2e3c54afd7a05/Swimming_logo_transparent.png" 
+                    <img src="https://raw.githubusercontent.com/JustinTrolle/Coaching-Support-and-Safety/2bb6086c6fd3de89a39964ee8ae51216e7d8f86f/Swimming_logo_uniform_blue.png" 
                          alt="Swimming Logo">
                 </div>
                 <!-- Safety Logo (Next to Swimming) -->
