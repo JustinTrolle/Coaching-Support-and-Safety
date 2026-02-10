@@ -269,7 +269,7 @@
 <body>
     <div class="container">
         <!-- Section B: Video Title with Logos - Clickable Accordion (Stays at Top) -->
-        <div class="section-b" onclick="toggleContent()">
+        <div class="section-b" onclick="toggleContent(this)">
             <div class="logos-container">
                 <!-- Swimming Logo (Far Left) - Updated URL -->
                 <div class="logo-container">
@@ -286,7 +286,7 @@
         </div>
 
         <!-- Content Wrapper - Hidden by Default -->
-        <div class="content-wrapper" id="contentWrapper">
+        <div class="content-wrapper">
             <div class="main-content">
                 <!-- Section A: Video Embed -->
                 <div class="section-a">
@@ -319,12 +319,12 @@
     </div>
 
     <script>
-        function toggleContent() {
-            const contentWrapper = document.getElementById('contentWrapper');
-            const titleSection = document.querySelector('.section-b');
+        function toggleContent(element) {
+            // Find the content wrapper that comes right after the clicked title
+            const contentWrapper = element.nextElementSibling;
             
             contentWrapper.classList.toggle('active');
-            titleSection.classList.toggle('active');
+            element.classList.toggle('active');
         }
     </script>
 </body>
