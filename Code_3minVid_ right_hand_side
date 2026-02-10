@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USA Triathlon Education Video</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0C2340; /* USAT Navy Blue */
+            color: #FFFFFF;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: #0C2340;
+            padding: 20px;
+        }
+
+        /* Section B - Video Title with Logos (Top, Full Width) - Clickable and Sticky */
+        .section-b {
+            background-color: #13294B; /* Dark Blue */
+            padding: 20px 30px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .section-b:hover {
+            background-color: #1a3a5f;
+        }
+
+        /* Logos Container - Holds both logos */
+        .logos-container {
+            display: flex;
+            gap: 15px;
+            flex-shrink: 0;
+        }
+
+        /* Individual Logo Container */
+        .logo-container {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .logo-container img {
+            max-width: 100%;
+            max-height: 100%;
+            height: auto;
+            width: auto;
+            display: block;
+        }
+
+        .section-b h1 {
+            color: #FFFFFF; /* White text on blue background */
+            font-size: 2em;
+            font-weight: bold;
+            flex-grow: 1;
+            padding-right: 40px;
+        }
+
+        /* Dropdown Arrow */
+        .section-b::after {
+            content: "▼";
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #E31837;
+            font-size: 1.5em;
+            transition: transform 0.3s ease;
+        }
+
+        .section-b.active::after {
+            transform: translateY(-50%) rotate(180deg);
+        }
+
+        /* Content Container - Hidden by Default */
+        .content-wrapper {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .content-wrapper.active {
+            max-height: 5000px;
+        }
+
+        /* Main Content Grid */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-rows: auto auto;
+            gap: 20px;
+            min-height: 600px;
+        }
+
+        /* Section C - Bullet Points (Left Side) */
+        .section-c {
+            background-color: #13294B; /* Dark Blue */
+            padding: 30px;
+            border-radius: 8px;
+            grid-row: 1;
+            grid-column: 1;
+        }
+
+        .section-c h2 {
+            color: #FFFFFF; /* White text */
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #E31837; /* USAT Red accent */
+        }
+
+        .section-c ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .section-c li {
+            color: #FFFFFF; /* White text */
+            font-size: 1.05em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .section-c li:before {
+            content: "▶";
+            color: #E31837; /* USAT Red */
+            position: absolute;
+            left: 0;
+            font-size: 0.8em;
+        }
+
+        /* Section A - Video (Right Side) */
+        .section-a {
+            background-color: #13294B; /* Dark Blue */
+            padding: 20px;
+            border-radius: 8px;
+            grid-row: 1;
+            grid-column: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section-a .video-container {
+            width: 100%;
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .section-a iframe,
+        .section-a video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 4px;
+        }
+
+        /* Section D - Summary (Bottom, Full Width) */
+        .section-d {
+            background-color: #13294B; /* Dark Blue */
+            padding: 25px 30px;
+            border-radius: 8px;
+            grid-row: 2;
+            grid-column: 1 / 3;
+            border-left: 5px solid #E31837; /* USAT Red accent */
+        }
+
+        .section-d h2 {
+            color: #FFFFFF; /* White text */
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .section-d p {
+            color: #FFFFFF; /* White text */
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto;
+            }
+
+            .section-c {
+                grid-row: 1;
+                grid-column: 1;
+            }
+
+            .section-a {
+                grid-row: 2;
+                grid-column: 1;
+            }
+
+            .section-d {
+                grid-row: 3;
+                grid-column: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-b {
+                padding: 15px 20px;
+            }
+
+            .logos-container {
+                gap: 10px;
+            }
+
+            .logo-container {
+                width: 60px;
+                height: 60px;
+            }
+
+            .section-b h1 {
+                font-size: 1.3em;
+                padding-right: 30px;
+            }
+
+            .section-c,
+            .section-d {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-container {
+                width: 50px;
+                height: 50px;
+            }
+
+            .section-b h1 {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Section B: Video Title with Logos - Clickable Accordion (Stays at Top) -->
+        <div class="section-b" onclick="toggleContent()">
+            <div class="logos-container">
+                <!-- Swimming Logo (Far Left) -->
+                <div class="logo-container">
+                    <img src="https://raw.githubusercontent.com/JustinTrolle/Coaching-Support-and-Safety/2bb6086c6fd3de89a39964ee8ae51216e7d8f86f/Swimming_logo_uniform_blue.png" 
+                         alt="Swimming Logo">
+                </div>
+                <!-- Safety Logo (Next to Swimming) -->
+                <div class="logo-container">
+                    <img src="https://raw.githubusercontent.com/JustinTrolle/Coaching-Support-and-Safety/7e16ec2502aed64897d154843ed23653a0db3c67/Safety_Logo_transparent.png" 
+                         alt="Safety Logo">
+                </div>
+            </div>
+            <h1>Mastering Your Swim In Water Beach Start</h1>
+        </div>
+
+        <!-- Content Wrapper - Hidden by Default -->
+        <div class="content-wrapper" id="contentWrapper">
+            <div class="main-content">
+                <!-- Section C: Key Points (Now on Left) -->
+                <div class="section-c">
+                    <h2>Key Points</h2>
+                    <ul>
+                        <li>Position yourself at the edges of the pack for more space and a cleaner start</li>
+                        <li>Wait a few seconds after the gun to let the initial chaos clear</li>
+                        <li>Start on the opposite side of the first buoy turn for more room</li>
+                        <li>Starting behind the group gives space to work through the field calmly</li>
+                        <li>Focus on staying relaxed and enjoying the swim rather than panicking</li>
+                    </ul>
+                </div>
+
+                <!-- Section A: Video Embed (Now on Right) -->
+                <div class="section-a">
+                    <div class="video-container">
+                        <iframe src="https://player.vimeo.com/video/1159893197?h=ab4695df10" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>                    
+                    </div>
+                </div>
+
+                <!-- Section D: Summary -->
+                <div class="section-d">
+                    <h2>Summary</h2>
+                    <p>
+                        Race swim starts can feel daunting, but strategic positioning makes them easier. Start at the pack edges or wait after the gun to avoid initial chaos. Position yourself opposite the first buoy turn for extra room. Starting behind allows calm progression through the field. The key is staying relaxed and enjoying your swim.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleContent() {
+            const contentWrapper = document.getElementById('contentWrapper');
+            const titleSection = document.querySelector('.section-b');
+            
+            contentWrapper.classList.toggle('active');
+            titleSection.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
