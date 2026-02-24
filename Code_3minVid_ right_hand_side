@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>USA Triathlon Education Video</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,22 +13,22 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #0C2340; /* USAT Navy Blue */
-            color: #FFFFFF;
+            font-family: 'Open Sans', sans-serif;
+            background-color: #FFFFFF;
+            color: #333333;
             padding: 20px;
         }
 
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            background-color: #0C2340;
+            background-color: #FFFFFF;
             padding: 20px;
         }
 
         /* Section B - Video Title with Logos (Top, Full Width) - Clickable and Sticky */
         .section-b {
-            background-color: #13294B; /* Dark Blue */
+            background-color: #E6EEF9; /* Secondary */
             padding: 20px 30px;
             margin-bottom: 20px;
             border-radius: 8px;
@@ -42,17 +43,16 @@
         }
 
         .section-b:hover {
-            background-color: #1a3a5f;
+            background-color: #d6e4f5;
         }
 
-        /* Logos Container - Holds both logos */
+        /* Logos Container */
         .logos-container {
             display: flex;
             gap: 15px;
             flex-shrink: 0;
         }
 
-        /* Individual Logo Container */
         .logo-container {
             width: 80px;
             height: 80px;
@@ -71,11 +71,14 @@
         }
 
         .section-b h1 {
-            color: #FFFFFF; /* White text on blue background */
+            font-family: 'Oswald', sans-serif;
+            color: #0C2340;
             font-size: 2em;
-            font-weight: bold;
+            font-weight: 700;
             flex-grow: 1;
             padding-right: 40px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         /* Dropdown Arrow */
@@ -116,7 +119,7 @@
 
         /* Section A - Video (Right Side) */
         .section-a {
-            background-color: #13294B; /* Dark Blue */
+            background-color: #E6EEF9; /* Secondary */
             padding: 20px;
             border-radius: 8px;
             grid-row: 1;
@@ -129,7 +132,7 @@
         .section-a .video-container {
             width: 100%;
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
         }
@@ -147,7 +150,7 @@
 
         /* Section C - Bullet Points (Left Side) */
         .section-c {
-            background-color: #13294B; /* Dark Blue */
+            background-color: #E6EEF9; /* Secondary */
             padding: 30px;
             border-radius: 8px;
             grid-row: 1;
@@ -155,11 +158,14 @@
         }
 
         .section-c h2 {
-            color: #FFFFFF; /* White text */
+            font-family: 'Oswald', sans-serif;
+            color: #0C2340;
             font-size: 1.5em;
+            font-weight: 600;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 3px solid #E31837; /* USAT Red accent */
+            border-bottom: 3px solid #E31837;
+            text-transform: uppercase;
         }
 
         .section-c ul {
@@ -168,7 +174,8 @@
         }
 
         .section-c li {
-            color: #FFFFFF; /* White text */
+            font-family: 'Open Sans', sans-serif;
+            color: #333333;
             font-size: 1.05em;
             line-height: 1.6;
             margin-bottom: 15px;
@@ -178,7 +185,7 @@
 
         .section-c li:before {
             content: "▶";
-            color: #E31837; /* USAT Red */
+            color: #E31837;
             position: absolute;
             left: 0;
             font-size: 0.8em;
@@ -186,22 +193,26 @@
 
         /* Section D - Summary (Bottom, Full Width) */
         .section-d {
-            background-color: #13294B; /* Dark Blue */
+            background-color: #DADADA; /* Tertiary */
             padding: 25px 30px;
             border-radius: 8px;
             grid-row: 2;
             grid-column: 1 / 3;
-            border-left: 5px solid #E31837; /* USAT Red accent */
+            border-left: 5px solid #E31837;
         }
 
         .section-d h2 {
-            color: #FFFFFF; /* White text */
+            font-family: 'Oswald', sans-serif;
+            color: #0C2340;
             font-size: 1.3em;
+            font-weight: 600;
             margin-bottom: 15px;
+            text-transform: uppercase;
         }
 
         .section-d p {
-            color: #FFFFFF; /* White text */
+            font-family: 'Open Sans', sans-serif;
+            color: #333333;
             font-size: 1em;
             line-height: 1.6;
         }
@@ -271,12 +282,10 @@
         <!-- Section B: Video Title with Logos - Clickable Accordion (Stays at Top) -->
         <div class="section-b" onclick="toggleContent(this)">
             <div class="logos-container">
-                <!-- Swimming Logo (Far Left) - Updated URL -->
                 <div class="logo-container">
                     <img src="https://raw.githubusercontent.com/JustinTrolle/Coaching-Support-and-Safety/2bb6086c6fd3de89a39964ee8ae51216e7d8f86f/Swimming_logo_uniform_blue.png" 
                          alt="Swimming Logo">
                 </div>
-                <!-- Safety Logo (Next to Swimming) -->
                 <div class="logo-container">
                     <img src="https://raw.githubusercontent.com/JustinTrolle/Coaching-Support-and-Safety/7e16ec2502aed64897d154843ed23653a0db3c67/Safety_Logo_transparent.png" 
                          alt="Safety Logo">
@@ -320,9 +329,7 @@
 
     <script>
         function toggleContent(element) {
-            // Find the content wrapper that comes right after the clicked title
             const contentWrapper = element.nextElementSibling;
-            
             contentWrapper.classList.toggle('active');
             element.classList.toggle('active');
         }
